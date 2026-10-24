@@ -1247,8 +1247,8 @@ class TransactionUtil extends Util
         } elseif ($transaction->status == 'draft' && $transaction->sub_status == 'proforma' && ! empty($il->common_settings['proforma_heading'])) {
             $output['invoice_heading'] = $il->common_settings['proforma_heading'];
         } elseif ($transaction->status == 'draft' && $transaction->is_quotation == 1) {
-            $output['invoice_heading'] = $il->quotation_heading;
-            $output['invoice_no_prefix'] = $il->quotation_no_prefix;
+            $output['invoice_heading'] = ! empty($il->quotation_heading) ? $il->quotation_heading : 'Quotation';
+            $output['invoice_no_prefix'] = ! empty($il->quotation_no_prefix) ? $il->quotation_no_prefix : 'Quotation No:';
         } elseif ($transaction_type == 'sales_order') {
             $output['invoice_heading'] = ! empty($il->common_settings['sales_order_heading']) ? $il->common_settings['sales_order_heading'] : __('lang_v1.sales_order');
             $output['invoice_no_prefix'] = $il->quotation_no_prefix;
@@ -1961,6 +1961,9 @@ class TransactionUtil extends Util
 
         $output['design'] = $il->design;
         $output['table_tax_headings'] = ! empty($il->table_tax_headings) ? array_filter(json_decode($il->table_tax_headings), 'strlen') : null;
+        $output['is_quotation'] = $transaction->is_quotation;
+        $output['sub_status'] = $transaction->sub_status;
+        $output['status'] = $transaction->status;
 
         return (object) $output;
     }

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 827 1169" width="100%" height="100%">
+  <!-- Top Right Decorative Shapes -->
+  <defs>
+    <linearGradient id="topBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0052cc" />
+      <stop offset="100%" stop-color="#00a6f0" />
+    </linearGradient>
+    <linearGradient id="cyanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+    <linearGradient id="darkBlueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c4cc7" />
+      <stop offset="100%" stop-color="#072b8c" />
+    </linearGradient>
+  </defs>
+
+  <!-- Top Right Waves -->
+  <polygon points="500,0 827,0 827,35 630,18" fill="#32b9f1" opacity="0.9" />
+  <polygon points="630,0 827,0 827,85 710,48" fill="#0c4cc7" />
+  <polygon points="720,0 827,0 827,150 780,75" fill="#083394" opacity="0.8" />
+
+  <!-- Bottom Left Waves -->
+  <polygon points="0,1048 144,1169 0,1169" fill="#0c4cc7" />
+  <polygon points="0,1070 95,1169 0,1169" fill="#32b9f1" />
+
+  <!-- Bottom Right Waves -->
+  <polygon points="706,1169 827,995 827,1169" fill="#32b9f1" />
+  <polygon points="740,1169 827,1050 827,1169" fill="#0c4cc7" />
+  <polygon points="790,1169 827,1100 827,1169" fill="#083394" />
+</svg>

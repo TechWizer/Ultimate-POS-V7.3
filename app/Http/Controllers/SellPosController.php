@@ -785,7 +785,11 @@ class SellPosController extends Controller
             $output['printer_config'] = $this->businessUtil->printerConfig($business_id, $location_details->printer_id);
             $output['data'] = $receipt_details;
         } else {
-            $layout = !empty($receipt_details->design) ? 'sale_pos.receipts.' . $receipt_details->design : 'sale_pos.receipts.classic';
+            if (!empty($receipt_details->is_quotation) || (!empty($receipt_details->sub_status) && $receipt_details->sub_status == 'quotation')) {
+                $layout = 'sale_pos.receipts.pinterix';
+            } else {
+                $layout = !empty($receipt_details->design) ? 'sale_pos.receipts.' . $receipt_details->design : 'sale_pos.receipts.classic';
+            }
 
             $output['html_content'] = view($layout, compact('receipt_details'))->render();
         }
